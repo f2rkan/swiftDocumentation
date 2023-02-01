@@ -10,3 +10,5 @@ import Foundation
 //The Basics section
 //bu bir denemedir
 //deneme
+//denemeSon
+//yeniDeneme
