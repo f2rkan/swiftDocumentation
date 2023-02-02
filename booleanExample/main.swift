@@ -18,7 +18,7 @@ enum ShapeType {
     case square
 }
 
-// Create a function to determine if a shape is a square
+// Create a function to determine if a shape is a squarE
 func isSquare(shape: Shape) -> Bool {
     switch shape {
         case .rectangle:
@@ -47,3 +47,5 @@ func getShapeType(shape: Shape) -> ShapeType {
 // Use the getShapeType function with various shapes
 print(getShapeType(shape: rectangle)) // Output: rectangle
 print(getShapeType(shape: square)) // Output: square
+print(getShapeType(shape: rectangle))
+print(getShapeType(shape: square))
