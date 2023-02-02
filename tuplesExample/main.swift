@@ -7,5 +7,9 @@
 
 import Foundation
 
-print("Hello, World!")
 
+let person = (name: "John Doe", age: 35, address: "123 Main St.")
+
+print("Name: \(person.name)")
+print("Age: \(person.age)")
+print("Address: \(person.address)")
