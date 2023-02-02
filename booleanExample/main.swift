@@ -47,5 +47,3 @@ func getShapeType(shape: Shape) -> ShapeType {
 // Use the getShapeType function with various shapes
 print(getShapeType(shape: rectangle)) // Output: rectangle
 print(getShapeType(shape: square)) // Output: square
-print(getShapeType(shape: rectangle))
-print(getShapeType(shape: square))
