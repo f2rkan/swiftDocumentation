@@ -7,5 +7,9 @@
 
 import Foundation
 
-print("Hello, World!")
-
+    //myFunction()
+    //helloWorld()
+    //varDefination()
+    //letFunc()
+    //letFuncVariant()
+    anotherType()
