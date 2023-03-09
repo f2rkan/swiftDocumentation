@@ -422,22 +422,22 @@ var welcome = "merhaba benim adım Ömer"
 //print(welcome)
 //
 //MARK: -offsetBy örnekleri:
-//sağdan sola 3 karakter geri gitmek:
+//MARK: sağdan sola 3 karakter geri gitmek:
 //let str = "Merhaba"
 //let index = str.index(str.endIndex, offsetBy: -3)
 //print(str[index])
 
-//soldan sağa 3 karakter ileri gitmek
+//MARK: soldan sağa 3 karakter ileri gitmek
 //let str = "Merhaba"
 //let index = str.index(str.startIndex, offsetBy: 3)
 //print(str[index])
 
-//bir kelimenin ilk harfini almak
+//MARK: bir kelimenin ilk harfini almak
 //let str = "Merhaba"
 //let index = str.index(str.startIndex, offsetBy: 0)
 //print(str[index])
 
-//bir String'in ilk kelimesini
+//MARK: bir String'in ilk kelimesini almak
 
 //let str = "Merhaba dünya"
 //let index = str.firstIndex(of: " ") ?? str.endIndex
@@ -456,3 +456,81 @@ var welcome = "merhaba benim adım Ömer"
 //let firstChar = str[str.startIndex..<index]
 //print(firstChar)
 
+//MARK: bir kelimenin ortasındaki harfi almak
+//let str = "Merhaba"
+//let middleIndex = str.index(str.startIndex, offsetBy: str.count/2)
+//let middleChar = str[middleIndex]
+//print(middleChar) // "h"
+
+//MARK: belirli bir karakterin konumunu bulmak
+//let str = "Merhaba"
+//let index = str.firstIndex(of: "a")!
+//let offset = str.distance(from: str.startIndex, to: index)
+//print(offset + 1) // 5
+
+//let str = "merhaba"
+//let index = str.firstIndex(of: "r")!
+//let distanceIndex = str.distance(from: str.startIndex, to: index)
+//print("aradığın harfin indisi \(distanceIndex) olarak bulundu.")
+
+//MARK: karakter dizisinin son n karakterini almak
+//let str = "merhaba"
+//let endIndex = str.endIndex
+////istediğin aralığı tanımla
+//let startIndex = str.index(endIndex, offsetBy: -4)
+//let suffix = str[startIndex..<endIndex]
+//print(suffix)
+
+//MARK: bir alt dizi içindeki belirli bir karakterin konumunu bulmak
+//let arr = ["Merhaba", "dünya"]
+//let index = arr[1].firstIndex(of: "ü")!
+//let offset = arr[1].distance(from: arr[1].startIndex, to: index)
+//print(offset) // 0
+
+//let arr = ["ömer", "ali", "veli", "şahin"]
+//let index = arr[1].firstIndex(of: "a")!
+//let offset = arr[1].distance(from: arr[1].startIndex, to: index)
+//print(offset)
+
+//MARK: d-
+//welcome.remove(at: welcome.index(before: welcome.endIndex))
+//// welcome now equals "hello there"
+//
+//let range = welcome.index(welcome.endIndex, offsetBy: -6)..<welcome.endIndex
+//welcome.removeSubrange(range)
+//// welcome now equals "hello
+//print(welcome)
+
+//var str = "bu bir deneme yazısıdır"
+//print(str)
+//
+//str.remove(at: str.index(before: str.endIndex))
+//print(str)
+//
+//let range = str.index(str.endIndex, offsetBy: -6)..<str.endIndex
+//str.removeSubrange(range)
+//print(str)
+//MARK: d-
+/*
+ Bu Swift dokümantasyonundaki ifade, "RangeReplaceableCollection" protokolünü uygulayan herhangi bir türde "insert(:at:)", "insert(contentsOf:at:)", "remove(at:)", ve "removeSubrange(:)" yöntemlerinin kullanılabileceğini söylüyor. Bu yöntemler, bir koleksiyondaki elemanların yerlerini ekleme, çıkarma ve değiştirme işlemlerini yapmak için kullanılır.
+
+ Bu protokolün uygulanabileceği türler arasında String, Array, Dictionary ve Set gibi koleksiyon türleri de yer alır. Bu türler, farklı veri yapılarına ve amaçlara sahip olsalar da, temelde elemanlarının eklenmesi, çıkarılması veya değiştirilmesi gereken durumlarda aynı işlemleri gerçekleştirmek için bu yöntemler kullanılabilir.
+
+ Örneğin, bir String nesnesinin "insert(_:at:)" yöntemi, belirtilen konuma yeni bir karakter veya karakter kümesi eklemek için kullanılabilir. Benzer şekilde, bir Array nesnesinin "remove(at:)" yöntemi, belirtilen konumdaki elemanı koleksiyondan çıkarmak için kullanılabilir.
+
+ Bu yöntemlerin kullanımı, koleksiyonlarda elemanları düzenlemenin en temel yollarından biridir ve bu Swift dokümantasyonunda bu yöntemlerin RangeReplaceableCollection protokolünü uygulayan tüm türlerde kullanılabileceği belirtilmektedir.
+ */
+
+//MARK: -Substring
+//MARK: Substringler, Stringlerin çoğu özelliğine sahiptir fakat bunlar, kısa süreliğine kullanman için ayarlanmıştır ve uzun süre kullanman gerektiğinde bunları bir String'e çevirebilirsin.
+
+/*
+ Swift dilinde "prefix(_:)” fonksiyonu, bir koleksiyonun belirli bir ön ek (prefix) alt kümesini döndürmek için kullanılır. Bu yöntem, bir dizinin veya bir stringin önceden belirlenmiş bir uzunluğu kapsayan başlangıç kısmını almak için sıklıkla kullanılır.
+
+ "prefix(_:)” fonksiyonu, bir dizi veya bir string için kullanılabildiği gibi, bir diğer koleksiyon türü olan Set ve Dictionary için de kullanılabilir. Fonksiyon, öğelerin koleksiyonda sırasını korur ve belirtilen sayıda öğeyi içeren bir alt küme döndürür.
+
+ Aşağıdaki örnek, "prefix(_:)” fonksiyonunun bir string üzerinde nasıl kullanılacağını gösterir:
+ */
+let string = "Merhaba dünya!"
+let prefix = string.prefix(7)
+print(prefix) // Output: "Merhaba"
