@@ -352,15 +352,107 @@ let greeting = "Guten Tag!"
 //MARK: d-
 //MARK: index(before:), index(after:) ve index(_:offsetBy:) Örneği:
 
-let myString: String = "Hello World!"
+//let myString: String = "Hello World!"
+//
+//let index1 = myString.index(before: myString.endIndex)
+//let index2 = myString.index(after: myString.startIndex)
+//let index3 = myString.index(myString.startIndex ,offsetBy: 6)
+//
+//print(myString[index1]) //!
+//print(myString[index2]) //e
+//print(myString[index3]) //W
+//
+//let index11 = myString.index(before: myString.endIndex)
+//let char1 = myString[index11]
+//print(char1) // çıktı: d
 
-let index1 = myString.index(before: myString.endIndex)
-let index2 = myString.index(after: myString.startIndex)
-let index3 = myString.index(myString.startIndex ,offsetBy: 6)
-
-print(myString[index1]) //!
-print(myString[index2]) //e
-print(myString[index3]) //W
-
+//index(before:)'da endIndex kullandık, çünkü endIndex en son elemanın index'ine işaret ediyordu ve bu sayede en sondan bir önceki, yani ! karakterini aldık;
+//index(after:)'da startIndex kullandık, çünkü after, sonraki elemana işaret eder ve endIndex kullanmış olsaydık compile-time hatası alacaktık, çünkü en son elemanın sonraki elemanına ulaşım söz konusu olmaz.
+//before ile after arasındaki fark: before, direkt en son index'in bir öncekini döndürüyor ama String'in karakterleri arasında default olarak boşluk var; yani endIndex, boş bir index'e işaret ediyorken, after, bir sonraki + bir sonraki yapıyor.
+//before: son - 1
+//after: baş + 1
 //MARK: d-
+//MARK: -Inserting and Removing:
+//var welcome = "hello"
+//welcome.insert("!", at: welcome.endIndex)
+//// welcome now equals "hello!"
+//print(welcome)
+//welcome.insert(contentsOf: " there", at: welcome.index(before: welcome.endIndex))
+//// welcome now equals "hello there!
+//print(welcome)
+
+//var welcome = "hello"
+//welcome.insert("!", at: welcome.endIndex)
+//print(welcome) //hello!
+//
+////index(before: ve after: için bol egzersiz yap
+////ünlem sona geldi
+//welcome.insert(contentsOf: " there", at: welcome.index(before: welcome.endIndex))
+//print(welcome) //hello there!
+
+var welcome = "merhaba benim adım Ömer"
+//welcome.insert("?", at: welcome.endIndex)
+//print(welcome)
+//
+//welcome.insert(contentsOf: ", nasılsın", at: welcome.index(before: welcome.endIndex))
+//print(welcome)
+//MARK: insert examples-
+/*
+ --Belirtilen bir dizindeki bir String'ten tek bir karakteri kaldırmak için remove(at:) yöntemini kullan;
+ --Belirli bir aralıktaki bir alt dizeyi kaldırmak için removeSubrange(_:) yöntemini kullanın:
+ */
+//welcome.remove(at: welcome.index(before: welcome.endIndex))
+//// welcome now equals "hello there"
+//
+//let range = welcome.index(welcome.endIndex, offsetBy: -6)..<welcome.endIndex
+//welcome.removeSubrange(range)
+//// welcome now equals "hello
+
+//welcome.remove(at: welcome.index(before: welcome.endIndex))
+//let range = welcome.index(welcome.endIndex, offsetBy: -6)..<welcome.endIndex
+//welcome.removeSubrange(range)
+//
+//print(welcome)
+
+//welcome.remove(at: welcome.index(before: welcome.endIndex))
+//print(welcome)
+
+//let range = welcome.index(welcome.endIndex, offsetBy: -6)..<welcome.endIndex
+//welcome.removeSubrange(range)
+//print(welcome)
+//
+//MARK: -offsetBy örnekleri:
+//sağdan sola 3 karakter geri gitmek:
+//let str = "Merhaba"
+//let index = str.index(str.endIndex, offsetBy: -3)
+//print(str[index])
+
+//soldan sağa 3 karakter ileri gitmek
+//let str = "Merhaba"
+//let index = str.index(str.startIndex, offsetBy: 3)
+//print(str[index])
+
+//bir kelimenin ilk harfini almak
+//let str = "Merhaba"
+//let index = str.index(str.startIndex, offsetBy: 0)
+//print(str[index])
+
+//bir String'in ilk kelimesini
+
+//let str = "Merhaba dünya"
+//let index = str.firstIndex(of: " ") ?? str.endIndex
+//let firstChar = str[str.startIndex..<index]
+//print(firstChar)
+
+//firstIndex(of: ) örneği:
+//var students = ["Ben", "Ivy", "Jordell", "Maxime"]
+//if let i = students.firstIndex(of: "Maxime") {
+//    students[i] = "Ömer"
+//}
+//print(students)
+
+//let str = "merhaba dünya"
+//let index = str.firstIndex(of: " ") ?? str.endIndex
+//let firstChar = str[str.startIndex..<index]
+//print(firstChar)
 
