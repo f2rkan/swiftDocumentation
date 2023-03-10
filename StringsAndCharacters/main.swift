@@ -310,7 +310,7 @@ import Foundation
 //    print(distance)
 //}
 
-let greeting = "Guten Tag!"
+//let greeting = "Guten Tag!"
 //print(greeting[greeting.startIndex])
 //// G
 //print(greeting[greeting.index(before: greeting.endIndex)])
@@ -531,6 +531,81 @@ var welcome = "merhaba benim adım Ömer"
 
  Aşağıdaki örnek, "prefix(_:)” fonksiyonunun bir string üzerinde nasıl kullanılacağını gösterir:
  */
-let string = "Merhaba dünya!"
-let prefix = string.prefix(7)
-print(prefix) // Output: "Merhaba"
+//let string = "Merhaba dünya!"
+//let prefix = string.prefix(7)
+//print(prefix) // Output: "Merhaba"
+//prefix(_:) kullanmak yerine aşağıdaki gibi bir kullanımı da tercih edebilirsin.
+//let str = "Merhaba, benim adım Ömer"
+//let range = str.index(str.startIndex, offsetBy: 7)
+//print(str[str.startIndex..<range])
+
+//MARK: dolaylı yoldan prefix kullanmak ve bu prefix'i String'e çevirmek:
+//let greeting = "Hello, world!"
+//print(greeting)
+//let index = greeting.firstIndex(of: ",") ?? greeting.endIndex
+//let beginning = greeting[..<index]
+//print(beginning)
+//// beginning is "Hello"
+//
+//// Convert the result to a String for long-term storage.
+//let newString = String(beginning)
+//print(newString)
+
+//let greeting = "Hello, world!"
+//let index = greeting.firstIndex(of: ",") ?? greeting.endIndex
+//let beginning = greeting[..<index]
+//print(beginning)
+//
+//let newString = String(beginning)
+//print(newString)
+
+//MARK: Substring'lerin bellek yönetimi bilgisi
+/*
+ Bir substring, karakterlerin depolandığı bellek bölgesine sahiptir. Fakat, bir substring ve orijinal string arasındaki fark, performans optimizasyonu olarak, bir substring, orijinal stringin veya başka bir substring'in bellek bölgesinin bir kısmını yeniden kullanabilir.
+
+ Bu performans optimizasyonu, bellek kopyalama maliyetini, string veya substring değiştirilene kadar ödemek zorunda olmadığınız anlamına gelir. Ancak, substring'ler uzun süreli depolama için uygun değildir - çünkü orijinal string'in bellek alanı yeniden kullanıldığından, herhangi bir substring kullanıldığı sürece orijinal string'in tamamı bellekte tutulmak zorundadır.
+
+ Örneğin, aşağıdaki kod örneği, bir string'in substring'ini ve yeni bir stringi nasıl işleyeceğinizi gösterir:
+*/
+
+//let greeting = "Hello, world!"
+//let beginning = greeting.prefix(5) // "Hello"
+//let newString = String(beginning) // "Hello"
+//
+//print(greeting) // "Hello, world!"
+//print(beginning) // "Hello"
+//print(newString) // "Hello"
+
+//404
+//var wwelcome = "hello there!"
+//wwelcome.remove(at: wwelcome.index(before: wwelcome.endIndex))
+//print(wwelcome)
+
+//425
+//sağdan sola 6 alındı
+//let str = "merhaba, benim ismim Ömer"
+//let rightToLeft = str.index(str.endIndex, offsetBy: -6)..<str.endIndex
+//print(str[rightToLeft])
+
+//476
+//karakter dizisinin son n karakterini almak
+//let str = "merhaba, benim adım Ömer"
+//let suffix = str[str.index(str.endIndex, offsetBy: -4)..<str.endIndex]
+//print(suffix)
+
+//let endIndex = str.endIndex
+//let startIndex = str.index(endIndex, offsetBy: -4)
+//let suffix = str[startIndex..<endIndex]
+//print(suffix)
+
+//484
+//let deneme = ["ömer", "furkan", "sağır", "deneme"]
+//let index = deneme[1].firstIndex(of: "u")!
+//let offset = deneme[1].distance(from: deneme[1].startIndex, to: index)
+//print(offset)
+
+//let arr = ["ali", "veli", "deli", "beli"]
+//let startIndex = arr[1].startIndex
+//let index = arr[1].firstIndex(of: "e")!
+//let offset = arr[1].distance(from: startIndex, to: index)
+//print(offset)
