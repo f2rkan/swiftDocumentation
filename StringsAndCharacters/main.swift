@@ -675,19 +675,19 @@ var welcome = "merhaba benim adım Ömer"
 //MARK: Prefix ve Suffix Eşitliği
 //Bir dizenin belirli bir String prefix'i veya Suffix'i olup olmadığını kontrol etmek için, her ikisi de String türünde tek bir argüman alan ve bir Boole değeri döndüren String'in hasPrefix(_:) ve hasSuffix(_:) fonksiyonlarını çağır.
 
-//let romeoAndJuliet = [
-//    "Act 1 Scene 1: Verona, A public place",
-//    "Act 1 Scene 2: Capulet's mansion",
-//    "Act 1 Scene 3: A room in Capulet's mansion",
-//    "Act 1 Scene 4: A street outside Capulet's mansion",
-//    "Act 1 Scene 5: The Great Hall in Capulet's mansion",
-//    "Act 2 Scene 1: Outside Capulet's mansion",
-//    "Act 2 Scene 2: Capulet's orchard",
-//    "Act 2 Scene 3: Outside Friar Lawrence's cell",
-//    "Act 2 Scene 4: A street in Verona",
-//    "Act 2 Scene 5: Capulet's mansion",
-//    "Act 2 Scene 6: Friar Lawrence's cell"
-//]
+let romeoAndJuliet = [
+    "Act 1 Scene 1: Verona, A public place",
+    "Act 1 Scene 2: Capulet's mansion",
+    "Act 1 Scene 3: A room in Capulet's mansion",
+    "Act 1 Scene 4: A street outside Capulet's mansion",
+    "Act 1 Scene 5: The Great Hall in Capulet's mansion",
+    "Act 2 Scene 1: Outside Capulet's mansion",
+    "Act 2 Scene 2: Capulet's orchard",
+    "Act 2 Scene 3: Outside Friar Lawrence's cell",
+    "Act 2 Scene 4: A street in Verona",
+    "Act 2 Scene 5: Capulet's mansion",
+    "Act 2 Scene 6: Friar Lawrence's cell"
+]
 //MARK: Oyunun 1. Perdesindeki sahne sayısını saymak için romeoAndJuliet dizisiyle hasPrefix(_:) yöntemini kullanabilirsiniz:
 //var act1SceneCount = 0
 //for scene in romeoAndJuliet {
@@ -722,3 +722,78 @@ var welcome = "merhaba benim adım Ömer"
 //    }
 //}
 //print("isminde Furkan geçen names üyeleri sayısı: \(furkanCount)")
+
+//let hasPrefixExample = [
+//"Ayşe Fatma",
+//"Ayşe İrem",
+//"Ayşe Hasret",
+//"Ahu Rüya"]
+//
+//var countAyse = 0
+//for counting in hasPrefixExample{
+//    if counting.hasPrefix("Ayşe"){
+//        countAyse += 1
+//    }
+//}
+//print("ismi Ayşe ile başlayan hasPrefixExample üyelerinin sayısı: \(countAyse)")
+
+//let hasSuffixExample = [
+//"Fatma Ayşe",
+//"Ahu Ayşe",
+//"Aysu Ayşe",
+//"İrem Ayşe",
+//"Fatma İrem",
+//"Rüya Melek"]
+//
+//var countAyse = 0
+//for counting in hasSuffixExample{
+//    if counting.hasSuffix("Ayşe"){
+//        countAyse += 1
+//    }
+//}
+//print("ikinci ismi Ayşe olan hasSuffixExample üyelerinin sayısı: \(countAyse)")
+
+
+//var mansionCount = 0
+//var cellCount = 0
+//for scene in romeoAndJuliet {
+//    if scene.hasSuffix("Capulet's mansion") {
+//        mansionCount += 1
+//    } else if scene.hasSuffix("Friar Lawrence's cell") {
+//        cellCount += 1
+//    }
+//}
+//print("\(mansionCount) mansion scenes; \(cellCount) cell scenes")
+
+//MARK: hasSuffix ve hasPrefix examples-
+//let names = [
+//"Ömer Furkan",
+//"Ahmet Furkan",
+//"Ömer Faruk",
+//"Emir Berke"]
+//
+//var countFurkan = 0, countOmer = 0
+//for counting in names{
+//    if counting.hasPrefix("Ömer"){
+//        countOmer += 1
+//        if counting.hasSuffix("Furkan"){
+//            countFurkan += 1
+//        }
+//    }else if counting.hasSuffix("Furkan"){
+//        countFurkan += 1
+//    }
+//}
+//print("Ömer sayısı: \(countOmer); Furkan sayısı: \(countFurkan)")
+
+//MARK: hasPrefix ve hasSuffix'in beraber kullanımının bir örneği. Bu fonksiyonlardan biri çalıştığında diğeri çalışmadan es geçiliyor; o yüzden dikkatli kullanılmalı. Örneğin iç içe for ile buradaki hatanın önüne geçildi-
+//let dogString = "Dog‼🐶"
+//
+//for codeUnit in dogString.utf8 {
+//    print("\(codeUnit) ", terminator: "")
+//}
+//print("")
+
+//MARK: Unicode örneği-
+//for scalar in dogString.unicodeScalars {
+//    print("\(scalar) ")
+//}
