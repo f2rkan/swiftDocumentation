@@ -609,3 +609,116 @@ var welcome = "merhaba benim adım Ömer"
 //let index = arr[1].firstIndex(of: "e")!
 //let offset = arr[1].distance(from: startIndex, to: index)
 //print(offset)
+
+//515
+//MARK: "insert(:at:)" yöntemi, belirtilen dizin konumuna belirtilen öğeyi ekler:
+//var numbers = [1, 2, 3, 4, 5]
+//numbers.insert(6, at: 3)
+//print(numbers)
+//numbers.insert(77, at: 0)
+//print(numbers)
+//
+//var letters = ["a", "b", "c", "d"]
+//letters.insert("ceyhan", at: 3)
+//print(letters)
+//MARK: d-
+//MARK: "insert(contentsOf:at:)" yöntemi, belirtilen dizin konumuna belirtilen koleksiyondaki öğeleri ekler:
+//var deneme = ["ömer", "furkan", "ali", "veli"]
+//let deneme2 = ["ahmet", "mehmet", "kerem"]
+//deneme.insert(contentsOf: deneme2, at: 2)
+//print(deneme)
+//MARK: -Comparing String
+//Swift, metin değerlerini karşılaştırmak için üç yol sağlar: String ve Character eşitliği, prefix eşitliği ve suffix - son ek eşitliği.
+//MARK: String ve Karakter Eşitliği
+//String ve karakter eşitliği “eşit” operatörü (==) ve “eşit değil” operatörü (!=)
+
+//let quotation = "We're a lot alike, you and I."
+//let sameQuotation = "We're a lot alike, you and I."
+//if quotation == sameQuotation {
+//    print("These two strings are considered equal")
+//}
+
+//let compString = "bu bir deneme string'idir"
+//let compareString = "bu bir deneme string'idir"
+//if compString == compareString{
+//    print("karşılaştırılan iki string de eşit")
+//}else{
+//    print("karşılaştırılan iki string birbirine eşit değil")
+//}
+
+//let eAcuteQuestion = "Voulez-vous un caf\u{E9}?"
+//
+////"Voulez-vous un café?" using LATIN SMALL LETTER E and COMBINING ACUTE ACCENT
+//let combinedEAcuteQuestion = "Voulez-vous un caf\u{65}\u{301}?"
+//
+//if eAcuteQuestion == combinedEAcuteQuestion {
+//    print("These two strings are considered equal")
+//}
+
+//let latinCapitalLetterA: Character = "\u{41}"
+//
+//let cyrillicCapitalLetterA: Character = "\u{0410}"
+//
+//if latinCapitalLetterA != cyrillicCapitalLetterA {
+//    print("These two characters aren't equivalent.")
+//}
+
+//let stringDeneme = "bu bir denemedir"
+//let stD = "bu bir deneme"
+//
+//if stringDeneme == stD{
+//    print("eşit")
+//}else{
+//    print("eşit değil")
+//}
+
+//MARK: Prefix ve Suffix Eşitliği
+//Bir dizenin belirli bir String prefix'i veya Suffix'i olup olmadığını kontrol etmek için, her ikisi de String türünde tek bir argüman alan ve bir Boole değeri döndüren String'in hasPrefix(_:) ve hasSuffix(_:) fonksiyonlarını çağır.
+
+//let romeoAndJuliet = [
+//    "Act 1 Scene 1: Verona, A public place",
+//    "Act 1 Scene 2: Capulet's mansion",
+//    "Act 1 Scene 3: A room in Capulet's mansion",
+//    "Act 1 Scene 4: A street outside Capulet's mansion",
+//    "Act 1 Scene 5: The Great Hall in Capulet's mansion",
+//    "Act 2 Scene 1: Outside Capulet's mansion",
+//    "Act 2 Scene 2: Capulet's orchard",
+//    "Act 2 Scene 3: Outside Friar Lawrence's cell",
+//    "Act 2 Scene 4: A street in Verona",
+//    "Act 2 Scene 5: Capulet's mansion",
+//    "Act 2 Scene 6: Friar Lawrence's cell"
+//]
+//MARK: Oyunun 1. Perdesindeki sahne sayısını saymak için romeoAndJuliet dizisiyle hasPrefix(_:) yöntemini kullanabilirsiniz:
+//var act1SceneCount = 0
+//for scene in romeoAndJuliet {
+//    if scene.hasPrefix("Act 1 ") {
+//        act1SceneCount += 1
+//    }
+//}
+//print("There are \(act1SceneCount) scenes in Act 1")
+
+//let names = [
+//"Ömer Furkan",
+//"Ahmet Furkan",
+//"Kerem Furkan",
+//"Ali Furkan",
+//"Osman Berke",
+//"Ali Kemal",
+//"Emir Berke",
+//"Ahmet Hikmet"]
+//
+////var furkanCount = 0
+////for counting in names{
+////    if counting.hasPrefix("Furkan"){ //prefix ön eklere baktığı için 0 output'u döner.
+////        furkanCount += 1
+////    }
+////}
+////print("isminde furkan geçen names üyeleri sayısı: \(furkanCount)")
+//
+//var furkanCount = 0
+//for counting in names{
+//    if counting.hasSuffix("Furkan"){ //case sensitivity var
+//        furkanCount += 1
+//    }
+//}
+//print("isminde Furkan geçen names üyeleri sayısı: \(furkanCount)")
